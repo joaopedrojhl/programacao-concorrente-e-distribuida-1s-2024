@@ -1,4 +1,4 @@
-package aula2;
+package aula02;
 
 public class Ola extends Thread {
 	public void run() {
