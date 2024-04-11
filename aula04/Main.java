@@ -2,7 +2,6 @@ package aula04;
 
 public class Main {
     public static void main(String[] args) {
-        int numExec = 0;
         while (true) {
 
             Counter counter = new Counter(0);
@@ -19,7 +18,6 @@ public class Main {
             } catch (InterruptedException e) {
                 System.out.println("Erro: Thread foi interrompida!!!");
             }
-            numExec++;
             if (counter.getValue() != 2) {
                 System.out.println("Valor final do contador: " + counter.getValue());
 
