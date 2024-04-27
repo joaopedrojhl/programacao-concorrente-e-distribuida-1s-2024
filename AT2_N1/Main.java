@@ -70,5 +70,34 @@ public class Main {
         threadCliente4.start();
         threadCliente5.start();
 
-       
-       
+        Thread threadFuncionario1Loja1 = new Thread(funcionario1Loja1);
+        Thread threadFuncionario2Loja1 = new Thread(funcionario2Loja1);
+        Thread threadFuncionario1Loja2 = new Thread(funcionario1Loja2);
+        Thread threadFuncionario2Loja2 = new Thread(funcionario2Loja2);
+
+        try {
+            threadCliente1.join();
+            threadCliente2.join();
+            threadCliente3.join();
+            threadCliente4.join();
+            threadCliente5.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        threadFuncionario1Loja1.start();
+        threadFuncionario2Loja1.start();
+        threadFuncionario1Loja2.start();
+        threadFuncionario2Loja2.start();
+
+        try {
+            threadFuncionario1Loja1.join();
+            threadFuncionario2Loja1.join();
+            threadFuncionario1Loja2.join();
+            threadFuncionario2Loja2.join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
