@@ -8,15 +8,15 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Cliente extends Pessoa implements Runnable {
     private Conta conta;
-    private Loja loja1;
-    private Loja loja2;
+    private Loja loja01;
+    private Loja loja02;
     private Lock lock;
 
     public Cliente(String nome, String endereco, String cpf, Conta conta, Loja loja1, Loja loja2) {
         super(nome, endereco, cpf);
         this.conta = conta;
-        this.loja1 = loja1;
-        this.loja2 = loja2;
+        this.loja01 = loja01;
+        this.loja02 = loja02;
         this.lock = new ReentrantLock();
     }
 
@@ -32,13 +32,13 @@ public class Cliente extends Pessoa implements Runnable {
             try {
                 if (conta.getSaldo() >= valorCompra) {
                     conta.sacar(valorCompra);
-                    String nomeLoja = Math.random() < 0.5 ? loja1.getNome() : loja2.getNome();
+                    String nomeLoja = Math.random() < 0.5 ? loja01.getNome() : loja02.getNome();
                     System.out.println("INICIANDO COMPRA!!");
                     System.out.println(getNome() + " realizou uma compra de R$" + valorCompra + " na loja " + nomeLoja);
                     if (Math.random() < 0.5) {
-                        loja1.receberPagamento(valorCompra);
+                        loja01.receberPagamento(valorCompra);
                     } else {
-                        loja2.receberPagamento(valorCompra);
+                        loja02.receberPagamento(valorCompra);
                     }
                     try {
                         Thread.sleep(1000);
