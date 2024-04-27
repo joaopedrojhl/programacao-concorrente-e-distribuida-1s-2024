@@ -68,5 +68,6 @@ public class Funcionario extends Pessoa implements Runnable {
     }
 
     public Conta getContaSalario(){
-        return c
+        return contaSalario;
+    }
 }
