@@ -35,10 +35,10 @@ public class Funcionario extends Pessoa implements Runnable {
         try {
             receberSalario(salario);
             try {
-                Thread.sleep(1000); 
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                System.err.println("Thread interrupted while sleeping: " + e.getMessage());
+                System.err.println("Thread interrupted enquanto sleeping: " + e.getMessage());
             }
         } finally {
             lock.unlock();
@@ -56,7 +56,7 @@ public class Funcionario extends Pessoa implements Runnable {
         if (contaSalario.getSaldo() >= valorInvestimento) {
             contaSalario.sacar(valorInvestimento);
             contaInvestimentos.depositar(valorInvestimento);
-            System.out.println("### Investimento de Salário ###");
+            System.out.println("Investimento de Salário!!!!");
             System.out.println(getNome() + " investiu R$" + valorInvestimento + " em conta de investimentos");
         } else {
             System.out.println(getNome() + " não possui saldo suficiente para investir R$" + valorInvestimento);
@@ -67,7 +67,7 @@ public class Funcionario extends Pessoa implements Runnable {
         return salario;
     }
 
-    public Conta getContaSalario(){
+    public Conta getContaSalario() {
         return contaSalario;
     }
 }

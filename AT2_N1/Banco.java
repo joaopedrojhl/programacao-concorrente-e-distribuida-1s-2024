@@ -40,9 +40,11 @@ public class Banco {
             if (origem.getSaldo() >= valor) {
                 origem.sacar(valor);
                 destino.depositar(valor);
-                System.out.println("Transferência de R$" + valor + " da conta " + origem.getNumero() + " para a conta " + destino.getNumero() + " realizada com sucesso.");
+                System.out.println("Transferência de R$" + valor + " da conta " + origem.getNumero() + " para a conta "
+                        + destino.getNumero() + " realizada com sucesso.");
             } else {
-                System.out.println("Saldo insuficiente na conta " + origem.getNumero() + " valor: " + origem.getSaldo() +" para realizar a transferência de R$" + valor);
+                System.out.println("Saldo insuficiente na conta " + origem.getNumero() + " valor: " + origem.getSaldo()
+                        + " para realizar a transferência de R$" + valor);
             }
         } finally {
             lock.unlock();

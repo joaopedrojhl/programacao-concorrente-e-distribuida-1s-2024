@@ -24,7 +24,7 @@ public class Conta {
 
     public void setSaldo(double novoSaldo) {
         this.saldo = novoSaldo;
-    }    
+    }
 
     public void depositar(double valor) {
         saldo += valor;
@@ -34,7 +34,7 @@ public class Conta {
         if (saldo >= valor) {
             saldo -= valor;
         } else {
-            System.out.println("Saldo insuficiente para sacar R$" + valor);
+            System.out.println("Saldo não é suficiente para sacar R$" + valor);
         }
     }
 }

@@ -52,15 +52,16 @@ public class Loja {
                         if (saldoAtual >= salario) {
                             contaRecebimento.sacar(salario);
                             funcionario.receberSalario(salario);
-                            System.out.println("### Pagamento de Salários ###");
-                            System.out.println("A loja " + nome + " pagou o salário de R$" + salario + " ao funcionário(loja) " + funcionario.getNome());
+                            System.out.println("Pagamento de Salário!!!!");
+                            System.out.println("A loja " + nome + " pagou o salário de R$" + salario
+                                    + " ao funcionário " + funcionario.getNome());
                             funcionario.investirSalario();
                             banco.transferir(contaRecebimento, contaDestino, salario);
-                            saldoAtual -= salario; 
-                            atualizarSaldo(saldoAtual); 
+                            saldoAtual -= salario;
+                            atualizarSaldo(saldoAtual);
 
                         } else {
-                            break; 
+                            break;
                         }
                     }
                 }
@@ -76,6 +77,6 @@ public class Loja {
     }
 
     public void exibirSaldo() {
-        System.out.println("--- Saldo atual da loja " + nome + ": R$" + contaRecebimento.getSaldo() + " ---");
+        System.out.println("Saldo atual da loja " + nome + ": R$" + contaRecebimento.getSaldo());
     }
 }

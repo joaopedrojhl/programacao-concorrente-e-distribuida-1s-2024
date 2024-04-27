@@ -33,7 +33,7 @@ public class Cliente extends Pessoa implements Runnable {
                 if (conta.getSaldo() >= valorCompra) {
                     conta.sacar(valorCompra);
                     String nomeLoja = Math.random() < 0.5 ? loja1.getNome() : loja2.getNome();
-                    System.out.println("#INICIANDO COMPRA#");
+                    System.out.println("INICIANDO COMPRA!!");
                     System.out.println(getNome() + " realizou uma compra de R$" + valorCompra + " na loja " + nomeLoja);
                     if (Math.random() < 0.5) {
                         loja1.receberPagamento(valorCompra);
@@ -41,19 +41,20 @@ public class Cliente extends Pessoa implements Runnable {
                         loja2.receberPagamento(valorCompra);
                     }
                     try {
-                        Thread.sleep(1000); 
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
-                        System.err.println("Thread interrupted while sleeping: " + e.getMessage());
+                        System.err.println("Thread interrupted enquanto sleeping: " + e.getMessage());
                     }
                 } else {
-                    System.out.println(getNome() + " não possui saldo suficiente para realizar a compra de R$" + valorCompra);
+                    System.out.println(
+                            getNome() + " não possui saldo suficiente para realizar a compra de R$" + valorCompra);
                     break;
                 }
             } finally {
                 lock.unlock();
             }
         }
-        System.out.println(getNome() + " terminou suas compras. Saldo final: R$" + conta.getSaldo());
+        System.out.println(getNome() + " finalizou suas compras. Saldo final: R$" + conta.getSaldo());
     }
 }

@@ -13,89 +13,88 @@ public class Main {
     public static void main(String[] args) {
         Banco banco = new Banco("Bradesco", 1000000000);
 
-        Conta contaLoja1 = new Conta("1", 0);
-        Conta contaLoja2 = new Conta("2", 0);
+        Conta contaLoja01 = new Conta("1", 0);
+        Conta contaLoja02 = new Conta("2", 0);
 
-        List<Funcionario> funcionariosLoja1 = new ArrayList<>();
-        List<Funcionario> funcionariosLoja2 = new ArrayList<>();
+        List<Funcionario> funcionariosLoja01 = new ArrayList<>();
+        List<Funcionario> funcionariosLoja02 = new ArrayList<>();
 
-        Conta contaFuncionario1Loja1 = new Conta("Funcionario1Loja1", 0);
-        Conta contaFuncionario2Loja1 = new Conta("Funcionario2Loja1", 0);
-        Conta contaFuncionario1Loja2 = new Conta("Funcionario1Loja2", 0);
-        Conta contaFuncionario2Loja2 = new Conta("Funcionario2Loja2", 0);
+        Conta contaFunc01Loja01 = new Conta("Func01Loja01", 0);
+        Conta contaFunc02Loja01 = new Conta("Func02Loja01", 0);
+        Conta contaFunc01Loja02 = new Conta("Func01Loja02", 0);
+        Conta contaFunc02Loja02 = new Conta("Func02Loja02", 0);
 
-        Conta contaInvestimentoFuncionario1Loja1 = new Conta("InvestimentoFuncionario1Loja1", 0);
-        Conta contaInvestimentoFuncionario2Loja1 = new Conta("InvestimentoFuncionario2Loja1", 0);
-        Conta contaInvestimentoFuncionario1Loja2 = new Conta("InvestimentoFuncionario1Loja2", 0);
-        Conta contaInvestimentoFuncionario2Loja2 = new Conta("InvestimentoFuncionario2Loja2", 0);
+        Conta contaInvestimentoFuncionario1Loja01 = new Conta("InvestimentoFuncionario1Loja01", 0);
+        Conta contaInvestimentoFuncionario2Loja01 = new Conta("InvestimentoFuncionario2Loja01", 0);
+        Conta contaInvestimentoFuncionario1Loja02 = new Conta("InvestimentoFuncionario1Loja02", 0);
+        Conta contaInvestimentoFuncionario2Loja02 = new Conta("InvestimentoFuncionario2Loja02", 0);
 
-        Funcionario funcionario1Loja1 = new Funcionario("Funcionario1Loja1", "Endereco1", "CPF1", 1400,
-                contaFuncionario1Loja1, contaInvestimentoFuncionario1Loja1, contaLoja1);
-        Funcionario funcionario2Loja1 = new Funcionario("Funcionario2Loja1", "Endereco2", "CPF2", 1400,
-                contaFuncionario2Loja1, contaInvestimentoFuncionario2Loja1, contaLoja2);
-        Funcionario funcionario1Loja2 = new Funcionario("Funcionario1Loja2", "Endereco3", "CPF3", 1400,
-                contaFuncionario1Loja2, contaInvestimentoFuncionario1Loja2, contaLoja1);
-        Funcionario funcionario2Loja2 = new Funcionario("Funcionario2Loja2", "Endereco4", "CPF4", 1400,
-                contaFuncionario2Loja2, contaInvestimentoFuncionario2Loja2, contaLoja2);
+        Funcionario funcionario1Loja01 = new Funcionario("Func01Loja1", "End01", "CPF01", 1400,
+                contaFunc01Loja01, contaInvestimentoFuncionario1Loja01, contaLoja01);
+        Funcionario funcionario2Loja01 = new Funcionario("Func02Loja1", "End02", "CPF02", 1400,
+                contaFunc02Loja01, contaInvestimentoFuncionario2Loja01, contaLoja02);
+        Funcionario funcionario1Loja02 = new Funcionario("Func01Loja2", "End03", "CPF03", 1400,
+                contaFunc01Loja02, contaInvestimentoFuncionario1Loja02, contaLoja01);
+        Funcionario funcionario2Loja02 = new Funcionario("Func02Loja2", "End04", "CPF04", 1400,
+                contaFunc02Loja02, contaInvestimentoFuncionario2Loja02, contaLoja02);
 
-        funcionariosLoja1.add(funcionario1Loja1);
-        funcionariosLoja1.add(funcionario2Loja1);
-        funcionariosLoja2.add(funcionario1Loja2);
-        funcionariosLoja2.add(funcionario2Loja2);
+        funcionariosLoja01.add(funcionario1Loja01);
+        funcionariosLoja01.add(funcionario2Loja01);
+        funcionariosLoja02.add(funcionario1Loja02);
+        funcionariosLoja02.add(funcionario2Loja02);
 
-        Loja loja1 = new Loja("Loja 1", banco, contaLoja1, funcionariosLoja1);
-        Loja loja2 = new Loja("Loja 2", banco, contaLoja2, funcionariosLoja2);
+        Loja loja01 = new Loja("Loja 1", banco, contaLoja01, funcionariosLoja01);
+        Loja loja02 = new Loja("Loja 2", banco, contaLoja02, funcionariosLoja02);
 
-        Conta contaCliente1 = new Conta("C1", 1000);
-        Conta contaCliente2 = new Conta("C2", 1000);
-        Conta contaCliente3 = new Conta("C3", 1000);
-        Conta contaCliente4 = new Conta("C4", 1000);
-        Conta contaCliente5 = new Conta("C5", 1000);
+        Conta contaCliente01 = new Conta("Conta01", 1000);
+        Conta contaCliente02 = new Conta("Conta02", 1000);
+        Conta contaCliente03 = new Conta("Conta03", 1000);
+        Conta contaCliente04 = new Conta("Conta04", 1000);
+        Conta contaCliente05 = new Conta("Conta05", 1000);
 
-        Cliente cliente1 = new Cliente("Cliente1", "Endereco1", "CPF1", contaCliente1, loja1, loja2);
-        Cliente cliente2 = new Cliente("Cliente2", "Endereco2", "CPF2", contaCliente2, loja1, loja2);
-        Cliente cliente3 = new Cliente("Cliente3", "Endereco3", "CPF3", contaCliente3, loja1, loja2);
-        Cliente cliente4 = new Cliente("Cliente4", "Endereco4", "CPF4", contaCliente4, loja1, loja2);
-        Cliente cliente5 = new Cliente("Cliente5", "Endereco5", "CPF5", contaCliente5, loja1, loja2);
+        Cliente cliente01 = new Cliente("Cliente01", "End", "CPF01", contaCliente01, loja01, loja02);
+        Cliente cliente02 = new Cliente("Cliente02", "End", "CPF02", contaCliente02, loja01, loja02);
+        Cliente cliente03 = new Cliente("Cliente03", "End3", "CPF03", contaCliente03, loja01, loja02);
+        Cliente cliente04 = new Cliente("Cliente04", "End4", "CPF04", contaCliente04, loja01, loja02);
+        Cliente cliente05 = new Cliente("Cliente05", "End5", "CPF05", contaCliente05, loja01, loja02);
 
-        Thread threadCliente1 = new Thread(cliente1);
-        Thread threadCliente2 = new Thread(cliente2);
-        Thread threadCliente3 = new Thread(cliente3);
-        Thread threadCliente4 = new Thread(cliente4);
-        Thread threadCliente5 = new Thread(cliente5);
+        Thread threadCliente01 = new Thread(cliente01);
+        Thread threadCliente02 = new Thread(cliente02);
+        Thread threadCliente03 = new Thread(cliente03);
+        Thread threadCliente04 = new Thread(cliente04);
+        Thread threadCliente05 = new Thread(cliente05);
 
-        threadCliente1.start();
-        threadCliente2.start();
-        threadCliente3.start();
-        threadCliente4.start();
-        threadCliente5.start();
+        threadCliente01.start();
+        threadCliente02.start();
+        threadCliente03.start();
+        threadCliente04.start();
+        threadCliente05.start();
 
-        Thread threadFuncionario1Loja1 = new Thread(funcionario1Loja1);
-        Thread threadFuncionario2Loja1 = new Thread(funcionario2Loja1);
-        Thread threadFuncionario1Loja2 = new Thread(funcionario1Loja2);
-        Thread threadFuncionario2Loja2 = new Thread(funcionario2Loja2);
+        Thread threadFuncionario1Loja01 = new Thread(funcionario1Loja01);
+        Thread threadFuncionario2Loja01 = new Thread(funcionario2Loja01);
+        Thread threadFuncionario1Loja02 = new Thread(funcionario1Loja02);
+        Thread threadFuncionario2Loja02 = new Thread(funcionario2Loja02);
 
         try {
-            threadCliente1.join();
-            threadCliente2.join();
-            threadCliente3.join();
-            threadCliente4.join();
-            threadCliente5.join();
+            threadCliente01.join();
+            threadCliente02.join();
+            threadCliente03.join();
+            threadCliente04.join();
+            threadCliente05.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-
-        threadFuncionario1Loja1.start();
-        threadFuncionario2Loja1.start();
-        threadFuncionario1Loja2.start();
-        threadFuncionario2Loja2.start();
+        threadFuncionario1Loja01.start();
+        threadFuncionario2Loja01.start();
+        threadFuncionario1Loja02.start();
+        threadFuncionario2Loja02.start();
 
         try {
-            threadFuncionario1Loja1.join();
-            threadFuncionario2Loja1.join();
-            threadFuncionario1Loja2.join();
-            threadFuncionario2Loja2.join();
+            threadFuncionario1Loja01.join();
+            threadFuncionario2Loja01.join();
+            threadFuncionario1Loja02.join();
+            threadFuncionario2Loja02.join();
         } catch (Exception e) {
             e.printStackTrace();
         }
